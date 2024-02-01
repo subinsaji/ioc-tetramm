@@ -1,0 +1,27 @@
+#!/bin/bash
+
+################################################################################
+# generic local build script for epics-containers ioc repositories             #
+################################################################################
+
+# set TARGET_ARCHITECTURE to rtems for RTEMS based targets
+T_A=${TARGET_ARCHITECTURE:-linux}
+# set TARGET to runtime for runtime images
+TARGET=${TARGET:-developer}
+# set TAG to override the default tag
+TAG=${TAG:-ec_test}
+
+# log commands and stop on erros
+set -xe
+
+cd $(dirname ${0})
+
+# use docker if available else use podman
+if ! docker version &>/dev/null; then docker=podman; else docker=docker; fi
+
+# make sure new repos get their submodule ibek-support
+git submodule update --init
+
+# build and developer images
+$docker build -t ${TAG} --build-arg TARGET_ARCHITECTURE=$T_A --target $TARGET .
+
