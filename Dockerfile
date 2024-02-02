@@ -45,8 +45,8 @@ RUN calc/install.sh R3-7-5
 COPY ibek-support/ADCore/ ADCore/
 RUN ADCore/install.sh R3-12-1
 
-COPY ibek-support/tetramm/ tetramm/
-RUN tetramm/install.sh R9-5
+COPY ibek-support/quadEM/ quadEM/
+RUN quadEM/install.sh R9-5
 ################################################################################
 
 # get the ioc source and build it
