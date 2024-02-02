@@ -26,6 +26,27 @@ RUN iocStats/install.sh 3.1.16
 
 ################################################################################
 #  TODO - Add further support module installations here
+
+COPY ibek-support/asyn/ asyn/
+RUN asyn/install.sh R4-42
+
+COPY ibek-support/autosave/ autosave/
+RUN autosave/install.sh R5-11
+
+COPY ibek-support/busy/ busy/
+RUN busy/install.sh R1-7-3
+
+COPY ibek-support/sscan/ sscan/
+RUN sscan/install.sh R2-11-6
+
+COPY ibek-support/calc/ calc/
+RUN calc/install.sh R3-7-5
+
+COPY ibek-support/ADCore/ ADCore/
+RUN ADCore/install.sh R3-12-1
+
+COPY ibek-support/tetramm/ tetramm/
+RUN tetramm/install.sh R9-5
 ################################################################################
 
 # get the ioc source and build it
