@@ -1,4 +1,4 @@
- #yaml-language-server: $schema=/tmp/ibek.ioc.schema.json
+# yaml-language-server: $schema=/tmp/ibek.ioc.schema.json
 
 ioc_name: '{{ ioc_yaml_file_name }}'
 
@@ -22,12 +22,12 @@ entities:
     QSIZE: 20
     R: ':DRV:'
 
-  - type: quadEM.TetrAMM
-    IP: 172.23.103.86:10001
-    P: BL03I-EA-XBPM-02
-    PORT: XBPM2.DRV
-    QSIZE: 20
-    R: ':DRV:'
+  # - type: quadEM.TetrAMM
+  #   IP: 172.23.103.86:10001
+  #   P: BL03I-EA-XBPM-02
+  #   PORT: XBPM2.DRV
+  #   QSIZE: 20
+  #   R: ':DRV:'
 
   # - type: quadEM.statPlugins
   #   NDARRAY_PORT: XBPM1.DRV
@@ -197,6 +197,6 @@ entities:
     pv: BL03I-EA-XBPM-02:X:FEEDBACK_SELECT
     value: "{'DCM Roll'}"
 
-  - type: epics.dbpf
-    pv: BL03I-EA-XBPM-02:Y:FEEDBACK_SELECT
-    value: "{'VFM FP'}"
+  # - type: epics.dbpf
+  #   pv: BL03I-EA-XBPM-02:Y:FEEDBACK_SELECT
+  #   value: "{'VFM FP'}"
